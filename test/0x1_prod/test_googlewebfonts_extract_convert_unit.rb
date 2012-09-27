@@ -1,13 +1,13 @@
 # encoding: utf-8
 
-module X module Prod
+module X module Prod module Dev
 
-  require_relative '../../../0x1_prod/00scripts/lib/0x1_prod/googlewebfonts_extract_convert.rb'
   require_relative '0x1_test.helper.rb'
   class TestXGoogleWebfontsExtractConvert < TestXLib
 
     def setup
       super
+      require File.join(@lib_dir, "googlewebfonts_extract_convert.rb")
       # available variables:
       #  - @test_dir: this test file's directory
       #  - @test_datadir: the temporary test datadir (initially copied by setup,
@@ -24,7 +24,7 @@ module X module Prod
 
   end
 
-end end
+end end end
 
 # ____________________________________________________________________
 # >>>>>  projet epiculture/ec1   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{{{
