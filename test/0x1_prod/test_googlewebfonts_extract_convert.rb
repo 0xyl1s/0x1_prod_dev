@@ -1,19 +1,17 @@
 # encoding: utf-8
 
 module X module Prod module Dev
+  require File.join(Dir.home, ".0x1/00mu/00sourcing/0x1_lib_dev/lib/"+
+                    "0x1_lib/dev/dev.rb")
+  include X::Lib::Dev
 
-  require_relative '0x1_test.helper.rb'
   class TestXGoogleWebfontsExtractConvert < TestXLib
 
     def setup
+      @test_file_full = File.absolute_path(__FILE__)
+      @lib_dir = x__filejsourcing("0x1_prod/lib/0x1_prod")
+      @test_datadir_ini = true
       super
-      require File.join(@lib_dir, "googlewebfonts_extract_convert.rb")
-      # available variables:
-      #  - @test_dir: this test file's directory
-      #  - @test_datadir: the temporary test datadir (initially copied by setup,
-      #    and erased by teardown.
-      x__testdir_full('../../test_data/0x1_prod/googlewebfonts_extract_convert/')
-      x__datadir_ini()
     end
 
     def test_x__

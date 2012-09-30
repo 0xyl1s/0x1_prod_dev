@@ -2,10 +2,10 @@
 
 module X module Prod module Dev
   X_LIB_PATH_BASE = '.0x1/00mu/00sourcing/0x1_lib'
-  X_PROD_LIB_DIR_BASE = '.0x1/00mu/00sourcing/0x1_prod/00scripts/lib/0x1_prod'
+  X_PROD_LIB_DIR_BASE = '.0x1/00mu/00sourcing/0x1_prod/lib/0x1_prod'
 
   require 'minitest/autorun'
-  require File.join(Dir.home, "#{X_LIB_PATH_BASE}/0x1/lib/toolkit/standard.rb")
+  require File.join(Dir.home, "#{X_LIB_PATH_BASE}/lib/0x1_lib/toolkit/standard.rb")
 
   class TestXLib < MiniTest::Unit::TestCase
     include X::Lib::Toolkit::Standard
